@@ -1,4 +1,7 @@
 import {withSentryConfig} from '@sentry/nextjs';
+
+await import("./src/env.js");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -20,7 +23,7 @@ project: "sitcon-2024-nextjs-demo",
 widenClientFileUpload: true,
 
 // Transpiles SDK to be compatible with IE11 (increases bundle size)
-transpileClientSDK: true,
+transpileClientSDK: false,
 
 // Routes browser requests to Sentry through a Next.js rewrite to circumvent ad-blockers (increases server load)
 tunnelRoute: "/monitoring",
